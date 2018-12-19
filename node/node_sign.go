@@ -123,7 +123,8 @@ func (node *BraftNode) sendEOSTxToChain(watcher eoswatcher.EOSWatcherInterface,
 	if err != nil {
 		leaderLogger.Error("send signed tx to eos failed", "err", err, "sctxid", signRes.TxId)
 	}
-	newlyTxHash := hex.EncodeToString(newlyTx.ID())
+	id ,_ := newlyTx.ID()
+	newlyTxHash := hex.EncodeToString(id)
 	return newlyTxHash, nil
 }
 
