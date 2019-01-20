@@ -18,9 +18,9 @@ coinbase_confirm_block_num = 100
 
 
 [LEVELDB]
-btc_db_path = "/home/yaanhyy/ofgp_data/leveldb_data/btc_tx_db"
-bch_db_path = "/home/yaanhyy/ofgp_data/leveldb_data/bch_tx_db"
-ew_nonce_db_path = "/home/yaanhyy/ofgp_data/leveldb_data/ew_tx_db"
+btc_db_path = "/home/yaanhyy/ofgp_data_1/leveldb_data/btc_tx_db"
+bch_db_path = "/home/yaanhyy/ofgp_data_1/leveldb_data/bch_tx_db"
+ew_nonce_db_path = "/home/yaanhyy/ofgp_data_1/leveldb_data/ew_tx_db"
 eos_db_path = ""
 [KEYSTORE]
 url = "http://127.0.0.1:9085"
@@ -35,9 +35,9 @@ keystore_private_key = "DFB21A9FF32406C22500A9D9E87EA4D7CC0D37B56DEA18B4543BA343
 
 [DGW]
 count = 2
-local_id = 0
-local_p2p_port = 10000
-local_http_port = 8080
+local_id = 1
+local_p2p_port = 10001
+local_http_port = 8081
 local_http_user = ""
 local_http_pwd = ""
 host_0 = "127.0.0.1:10000"
@@ -48,7 +48,7 @@ host_2 = "127.0.0.1:10002"
 status_2 = true
 host_3 = "127.0.0.1:10003"
 status_3 = true
-pprof_host = ":8060"
+pprof_host = ":8061"
 
 new_node_host = "127.0.0.1:10001"
 new_node_pubkey = "04B2681CA3694796EF34C933ACD158FB24E3033FA574E91D62539118D7D4A66D2F70589A0912CDB435EB6F1F337C844CDA7C40A74ED2280647A4E902DFD5407BBB"
@@ -56,15 +56,15 @@ new_node_pubkey = "04B2681CA3694796EF34C933ACD158FB24E3033FA574E91D62539118D7D4A
 bch_height = 0
 btc_height = 0
 eth_height = 0
-dbpath = "/home/yaanhyy/ofgp_data/leveldb_data/node0/dgateway"
+dbpath = "/home/yaanhyy/ofgp_data_1/leveldb_data/node1/dgateway"
 eth_client_url = "ws://127.0.0.1:8546"
 eos_dgateway_account = ""
 
 # start_mode指定节点的启动方式，1是正常启动，利用配置文件里面的节点信息建立网关集群，2是加入已有网关集群, 3是以观察节点的方式启动
-start_mode = 1
+start_mode = 2
 # init_node_host仅在mode!=1时才有意义，作为新节点的引导节点
 init_node_host = "127.0.0.1:10000"
-local_host = "127.0.0.1:10000"
+local_host = "127.0.0.1:10001"
 local_pubkey = "04B2681CA3694796EF34C933ACD158FB24E3033FA574E91D62539118D7D4A66D2F70589A0912CDB435EB6F1F337C844CDA7C40A74ED2280647A4E902DFD5407BBB"
 #交易确认区块数
 btc_confirms = 6

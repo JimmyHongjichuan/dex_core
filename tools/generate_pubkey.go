@@ -56,9 +56,10 @@ func main() {
 	}
 
 	serviceID := viper.GetString("KEYSTORE.service_id")
+	PubkeyHash := viper.GetString("KEYSTORE.local_pubkey_hash")
 	inputData := generateInput{
 		Count:     1,
-		ServiceID: serviceID,
+		ServiceID: PubkeyHash,
 		TimeStamp: time.Now().Unix(),
 	}
 	postData, err := json.Marshal(inputData)
@@ -81,7 +82,8 @@ func main() {
 		return
 	}
 
-	url := strings.Join([]string{viper.GetString("KEYSTORE.url"), "key/generate"}, "/")
+	//url := strings.Join([]string{viper.GetString("KEYSTORE.url"), "key/generate"}, "/")
+	url := strings.Join([]string{viper.GetString("KEYSTORE.url"), "key/get_prk"}, "/")
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(postData))
 	if err != nil {
 		fmt.Printf("create sign req err:%v\n", req)
